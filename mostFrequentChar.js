@@ -13,7 +13,7 @@ Write a function, mostFrequentChar, that takes in a string as an argument.
   mostFrequentChar('mississippi'); // -> 'i'
 
 */
-
+// using hash map
 const mostFrequentChar = (s) => {
   const count = {};
 
