@@ -14,16 +14,23 @@ Write a function, mostFrequentChar, that takes in a string as an argument.
 
 */
 
-const mostFrequentChar = (string) => {
-  let total = 0;
-  for (let i = 0; i < string.length; i++) {
-    let char = string[i];
-    if (char > 0) {
-      total += char;
+const mostFrequentChar = (s) => {
+  const count = {};
+
+  for (let char of s) {
+    if (!(char in count)) {
+      count[char] = 0;
     }
-    char++;
+    count[char] += 1;
   }
-  return total;
+
+  let best = null;
+  for (let char of s) {
+    if (best === null || count[char] > count[best]) {
+      best = char;
+    }
+  }
+  return best;
 };
 
 // n = length of string
