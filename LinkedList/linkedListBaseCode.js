@@ -21,7 +21,7 @@ const printLinkedList = (head) => {
 
   while (current !== null) {
     console.log(current.val);
-    current = current.ext;
+    current = current.next;
   }
 };
 
