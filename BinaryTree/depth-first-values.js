@@ -47,3 +47,18 @@ const depthFirstValues = (root) => {
 
   return values;
 };
+// n = number of nodes
+// Time: O(n)
+// Space: O(n)
+
+// recursive
+const depthFirstValues = (root) => {
+  if (root === null) return [];
+
+  const leftValues = depthFirstValues(root.left);
+  const rightValues = depthFirstValues(root.right);
+  return [root.val, ...leftValues, ...rightValues];
+};
+// n = number of nodes
+// Time: O(n)
+// Space: O(n)
